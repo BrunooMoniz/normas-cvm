@@ -1,0 +1,36 @@
+name: atualizar
+
+# Job leve: de hora em hora, busca no portal oficial o que saiu de novo e publica.
+on:
+  schedule:
+    - cron: "23 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: atualizar
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10
+      - name: Dependências de PDF e OCR
+        run: sudo apt-get install -y -qq --no-install-recommends poppler-utils tesseract-ocr tesseract-ocr-por > /dev/null
+      - name: Normas novas
+        run: uv run -q scripts/cvm.py --novos
+      - name: Publicar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && { echo "nada novo"; exit 0; }
+          novas=$(git diff --cached --name-status | grep -c '^A.*\.md$' || true)
+          git commit -q -m "dados: ${novas} normas novas em $(date -u +%d/%m/%Y)"
+          git pull -q --rebase origin main
+          git push -q origin main

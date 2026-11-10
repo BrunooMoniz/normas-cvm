@@ -428,17 +428,61 @@ def relatorio():
     return tot
 
 
+# "Altera a Resolução CVM nº 60" -> atualizar também a Resolução 60 (consolidado e situação mudam)
+CITACAO = re.compile(r"(Resolução|Instrução|Deliberação|Parecer de Orientação) CVM\s*(?:n\s*[º°o.]?\s*)?(\d+(?:\.\d+)*)", re.I)
+TIPO_PASTA = {"resolução": "resolucoes", "instrução": "instrucoes", "deliberação": "deliberacoes",
+              "parecer de orientação": "pareceres-orientacao"}
+
+
+def atualizar_novos(hoje):
+    """Modo leve (job agendado): baixa só as normas que ainda não têm .md e regrava as que elas citam."""
+    indices = {p: indexar(p) for p in CATEGORIAS}
+    nomes = {p: nomes_unicos(p, its) for p, its in indices.items()}
+    por_numero = {(p, numero_de(it["titulo"]).replace(".", "").lstrip("0")): it
+                  for p, its in indices.items() for it in its}
+    alvo = {}
+    for pasta, itens in indices.items():
+        existentes = {f.stem for f in (RAIZ / CATEGORIAS[pasta][1]).rglob("*.md")}
+        for it in itens:
+            if nomes[pasta][it["href"]] in existentes:
+                continue
+            alvo.setdefault(it["href"], (pasta, it, False))
+            for tipo, num in CITACAO.findall(it["resumo"]):
+                ppasta = TIPO_PASTA.get(tipo.lower())
+                ref = por_numero.get((ppasta, num.replace(".", "").lstrip("0")))
+                if ref:
+                    alvo.setdefault(ref["href"], (ppasta, ref, True))
+    falhas = {f["href"]: f for f in (json.loads(l) for l in FALHAS.read_text(encoding="utf-8").splitlines())} if FALHAS.exists() else {}
+    for href, (pasta, it, citada) in alvo.items():
+        try:
+            saida, avisos = processar(pasta, it, hoje, citada, nomes[pasta][href])
+            falhas.pop(href, None)
+            if avisos:
+                falhas[href] = {"pasta": pasta, "href": href, "erro": "sem texto: " + " | ".join(avisos)}
+            print(("atualizada" if citada else "nova") + f": {saida.relative_to(RAIZ)}", flush=True)
+        except Exception as e:
+            falhas[href] = {"pasta": pasta, "href": href, "erro": f"{type(e).__name__}: {e}"}
+    FALHAS.write_text("".join(json.dumps(f, ensure_ascii=False) + "\n" for f in sorted(
+        falhas.values(), key=lambda f: (f["pasta"], f["href"]))), encoding="utf-8")
+    print(f"{sum(1 for v in alvo.values() if not v[2])} novas, {sum(1 for v in alvo.values() if v[2])} atualizadas;",
+          "total [índice, md, com texto, só metadados, falhas]:", relatorio())
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("pastas", nargs="*", help=f"categorias (padrão: todas): {', '.join(CATEGORIAS)}")
     ap.add_argument("--limite", type=int, help="processa só as N primeiras de cada categoria")
     ap.add_argument("--forcar", action="store_true", help="baixa de novo mesmo o que está em cache")
     ap.add_argument("--relatorio", action="store_true", help="só regrava COBERTURA.md")
+    ap.add_argument("--novos", action="store_true",
+                    help="modo leve: só normas sem .md, mais as que elas citam (para o job agendado)")
     a = ap.parse_args()
     if a.relatorio:
         print(relatorio())
         return
     hoje = dt.date.today().isoformat()
+    if a.novos:
+        return atualizar_novos(hoje)
     pastas = a.pastas or list(CATEGORIAS)
     anteriores = [json.loads(l) for l in FALHAS.read_text(encoding="utf-8").splitlines()] if FALHAS.exists() else []
     falhas = [f for f in anteriores if f["pasta"] not in pastas]

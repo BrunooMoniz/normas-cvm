@@ -40,6 +40,10 @@ class Basicos(unittest.TestCase):
         md = cvm.html_para_md(html.encode("utf-16"))
         self.assertIn("Resolução CVM nº 218", md)
 
+    def test_citacao_na_ementa(self):
+        achados = cvm.CITACAO.findall("Altera a Resolução CVM nº 60, de 23 de dezembro de 2021 e a Instrução CVM n° 555.")
+        self.assertEqual(achados, [("Resolução", "60"), ("Instrução", "555")])
+
     def test_rank_prefere_consolidado_sem_marcas_e_html(self):
         arqs = [("Instrução (redação original)", "a/inst1.pdf"), ("Instrução (texto consolidado)", "a/inst1consolid.pdf"),
                 ("Instrução (texto consolidado) [DOC]", "a/inst1consolid.docx"),
