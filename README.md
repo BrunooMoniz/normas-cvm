@@ -21,7 +21,7 @@ As contagens por categoria, com o que ficou de fora, estão em **[COBERTURA.md](
 
 ```
 resolucoes/AAAA/resolNNN.md                 Resoluções CVM (2020 em diante)
-instrucoes/AAAA/instNNN.md                  Instruções CVM (1978 a 2022; quase todas revogadas)
+instrucoes/AAAA/instNNN.md                  Instruções CVM (1978 a 2020; substituídas pelas resoluções)
 deliberacoes/AAAA/deliNNN.md                Deliberações CVM
 pareceres-de-orientacao/AAAA/pareNNN.md     Pareceres de Orientação
 oficios-circulares/AAAA/oc-<area>-NNAA.md   Ofícios-Circulares das superintendências (SIN, SEP, SNC...)
@@ -46,21 +46,20 @@ orgao: "Comissão de Valores Mobiliários"
 tipo: "Instrução CVM"
 numero: "409"
 data: 2004-08-18
-ementa: "Dispõe sobre a constituição, a administração, o funcionamento e a divulgação de informações dos fundos de investimento. Revoga as Instruções ..."
+ementa: "Dispõe sobre a constituição, a administração, o funcionamento e a divulgação de informações dos fundos de investimento."
 revogada: true
 revogada_por: "Instrução 555/14"
 versao_texto: "texto consolidado sem marcas"
-publicacao: "Publicada no DOU de 24.08.04; Republicada no DOU de 08.02.13 ..."
-notas: "ALTERADA pelas Instruções 411/04 ; 413/04 ... REVOGADA pela Instrução 555/14 ."
-temas: ["Fundos de Investimento"]
+publicacao: "Publicada no DOU de 24.08.04; Republicada no DOU de 08.02.13 – texto consolidado sem marcas/Retificada no DOU de 14.06.13"
+notas: "ALTERADA pelas Instruções 411/04 ; 413/04 ; 450/07 ; 456/07 ; 465/08 ; 512/11 ; 522/12 ; 524/12 ; 536/13 ; 549/14 . REVOGADO o art. 74 pela Instrução 522/12 . REVOGADA pela Instrução 555/14 ."
 fonte: "https://conteudo.cvm.gov.br/legislacao/instrucoes/inst409.html"
-arquivo: "https://conteudo.cvm.gov.br/export/sites/cvm/legislacao/instrucoes/anexos/400/inst409consolid.pdf"
-sha256_arquivo: 3f1c...
+arquivo: "https://conteudo.cvm.gov.br/export/sites/cvm/legislacao/instrucoes/anexos/400/inst409consolidsemmarcas.pdf"
+sha256_arquivo: 4e179bb03f73dd1418411e4462d3b7399b2e4df22be86a6431af15a970c520ba
 baixado_em: 2026-11-10
 ---
 # Instrução CVM 409 (Revogada)
 
-INSTRUÇÃO CVM Nº 409, DE 18 DE AGOSTO DE 2004
+INSTRUÇÃO CVM N.º 409, DE 18 DE AGOSTO DE 2004.
 ...
 ```
 

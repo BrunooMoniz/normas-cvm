@@ -26,6 +26,20 @@ class Basicos(unittest.TestCase):
         self.assertEqual(cvm.slug("/legislacao/deliberacoes/deli0900/deli908.html", "deliberacoes"), "deli908")
         self.assertEqual(cvm.slug("/legislacao/oficios-circulares/sin/oc-sin-0125.html", "oficios-circulares"), "oc-sin-0125")
 
+    def test_nomes_unicos_em_colisao(self):
+        itens = [{"href": "/legislacao/oficios-circulares/sin/oc-sin-0623.html"},
+                 {"href": "/legislacao/oficios-circulares/sse1/oc-sin-0623.html"},
+                 {"href": "/legislacao/oficios-circulares/sin/oc-sin-0125.html"}]
+        nomes = cvm.nomes_unicos("oficios-circulares", itens)
+        self.assertEqual(len(set(nomes.values())), 3)
+        self.assertEqual(nomes[itens[1]["href"]], "oc-sin-0623-sse1")
+        self.assertEqual(nomes[itens[2]["href"]], "oc-sin-0125")
+
+    def test_html_utf16_do_word(self):
+        html = '<html><head><meta http-equiv=Content-Type content="text/html; charset=unicode"></head><body><p>Resolução CVM nº 218</p></body></html>'
+        md = cvm.html_para_md(html.encode("utf-16"))
+        self.assertIn("Resolução CVM nº 218", md)
+
     def test_rank_prefere_consolidado_sem_marcas_e_html(self):
         arqs = [("Instrução (redação original)", "a/inst1.pdf"), ("Instrução (texto consolidado)", "a/inst1consolid.pdf"),
                 ("Instrução (texto consolidado) [DOC]", "a/inst1consolid.docx"),

@@ -246,6 +246,9 @@ def html_para_md(html_bytes):
     from bs4 import BeautifulSoup
     from markdownify import markdownify
 
+    if html_bytes[:2] in (b"\xff\xfe", b"\xfe\xff"):  # Word salva "charset=unicode" como UTF-16 com BOM
+        html_bytes = html_bytes.decode("utf-16").encode("utf-8")
+        html_bytes = re.sub(rb"charset=[\"']?unicode", b"charset=utf-8", html_bytes, flags=re.I)
     cabeca = html_bytes[:4000].decode("ascii", "ignore").lower()
     m = re.search(r"charset=[\"']?([\w-]+)", cabeca)
     try:
@@ -350,7 +353,22 @@ def montar_md(meta, corpo):
     return f"---\n{cab}\n---\n# {meta['titulo']}\n\n{corpo}"
 
 
-def processar(pasta, item, hoje, forcar=False):
+def nomes_unicos(pasta, itens):
+    """Slug de cada href; quando dois itens dão o mesmo nome (o portal repete arquivos em subpastas), acrescenta a subpasta."""
+    contagem = {}
+    for it in itens:
+        contagem[slug(it["href"], pasta)] = contagem.get(slug(it["href"], pasta), 0) + 1
+    nomes = {}
+    for it in itens:
+        nome = slug(it["href"], pasta)
+        if contagem[nome] > 1:
+            sub = urllib.parse.unquote(urllib.parse.urlsplit(it["href"]).path).rstrip("/").split("/")[-2]
+            nome = nome + "-" + re.sub(r"[^\w.-]+", "-", sub).lower()
+        nomes[it["href"]] = nome
+    return nomes
+
+
+def processar(pasta, item, hoje, forcar=False, nome=None):
     tipo, destino = CATEGORIAS[pasta]
     url = url_abs(item["href"])
     html = em_cache(url, forcar).decode("utf-8", "replace")
@@ -382,7 +400,7 @@ def processar(pasta, item, hoje, forcar=False):
         "baixado_em": hoje,
     }
     ano = data[:4] if data else "sem-data"
-    saida = RAIZ / destino / ano / f"{slug(item['href'], pasta)}.md"
+    saida = RAIZ / destino / ano / f"{nome or slug(item['href'], pasta)}.md"
     saida.parent.mkdir(parents=True, exist_ok=True)
     saida.write_text(montar_md(meta, corpo), encoding="utf-8")
     return saida, (erros if not arquivo else [])
@@ -424,12 +442,13 @@ def main():
     falhas = [f for f in anteriores if f["pasta"] not in pastas]
     for pasta in pastas:
         itens = indexar(pasta)
+        nomes = nomes_unicos(pasta, itens)
         if a.limite:
             itens = itens[: a.limite]
         print(f"{pasta}: {len(itens)} itens", flush=True)
         for n, item in enumerate(itens, 1):
             try:
-                _, avisos = processar(pasta, item, hoje, a.forcar)
+                _, avisos = processar(pasta, item, hoje, a.forcar, nomes[item["href"]])
                 if avisos:
                     falhas.append({"pasta": pasta, "href": item["href"], "erro": "sem texto: " + " | ".join(avisos)})
             except Exception as e:
