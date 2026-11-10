@@ -1,21 +1,91 @@
 # Normas da CVM em Markdown
 
-Todas as normas publicadas no [portal de legislação da CVM](https://conteudo.cvm.gov.br/legislacao/index.html),
-convertidas para Markdown com cabeçalho estruturado e link para a origem de cada texto: resoluções,
-instruções, deliberações, pareceres de orientação, ofícios-circulares, notas explicativas, decisões conjuntas
-e portarias.
+Todas as normas da Comissão de Valores Mobiliários, convertidas das fontes oficiais para Markdown, com
+cabeçalho estruturado e link para a origem de cada texto: resoluções, instruções, deliberações, pareceres
+de orientação, ofícios-circulares, notas explicativas, decisões conjuntas e portarias, de 1977 até hoje.
+As contagens do acervo publicado são atualizadas a cada coleta, aqui e em **[COBERTURA.md](COBERTURA.md)**.
 
-Inspirado no [ctresb/leis](https://github.com/ctresb/leis), que reúne a legislação brasileira no mesmo
-formato. As leis do mercado de capitais (Lei 6.385/1976, Lei 6.404/1976 e as demais) já estão lá, em
-`federal/`; aqui ficam só os atos da CVM. As normas do Banco Central e do CMN estão em
-[normas-bcb](https://github.com/BrunooMoniz/normas-bcb).
+O objetivo é ter **toda a regulação do mercado de capitais** num lugar só, em texto simples, de graça,
+para qualquer pessoa e para qualquer IA ler: cada norma com a situação (vigente ou revogada), quem a
+revogou, o que a alterou, os temas e o arquivo oficial de onde o texto saiu.
 
-As contagens por categoria, com o que ficou de fora, estão em **[COBERTURA.md](COBERTURA.md)**.
+Faz par com [normas-bcb](https://github.com/BrunooMoniz/normas-bcb) (Banco Central e CMN) e segue o
+formato do [ctresb/leis](https://github.com/ctresb/leis), que reúne a legislação brasileira. As leis do
+mercado de capitais (Lei 6.385/1976, Lei 6.404/1976 e as demais) estão lá, em `federal/`; aqui ficam só
+os atos da CVM.
 
 > [!IMPORTANT]
 > Os textos têm caráter informativo e **não substituem a publicação no Diário Oficial da União** nem o
-> portal da CVM. São conversões automáticas (e OCR, nos documentos escaneados). Confira sempre a fonte
+> portal da CVM. São conversões automáticas, com OCR nos documentos escaneados. Confira sempre a fonte
 > indicada no cabeçalho antes de citar.
+
+---
+
+## Acervo
+
+<!-- acervo:inicio -->
+[![progresso](progresso.svg)](COBERTURA.md)
+
+**2.606 de 2.606 normas do índice oficial (100,0%)**, números de 10/11/2026. Vigentes são as que o portal não marca como revogadas nem canceladas.
+
+### Por pasta
+
+| Pasta | Tipo | No índice oficial | Publicadas | Vigentes | Revogadas | De | Até |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [`deliberacoes/`](deliberacoes/) | Deliberação CVM | 908 | 908 | 482 | 426 | 1978 | 2026 |
+| [`instrucoes/`](instrucoes/) | Instrução CVM | 627 | 627 | 8 | 619 | 1978 | 2020 |
+| [`oficios-circulares/`](oficios-circulares/) | Ofício-Circular CVM | 601 | 601 | 601 | 0 | 1996 | 2026 |
+| [`resolucoes/`](resolucoes/) | Resolução CVM | 251 | 251 | 233 | 18 | 2020 | 2026 |
+| [`notas-explicativas/`](notas-explicativas/) | Nota Explicativa CVM | 77 | 77 | 6 | 71 | 1977 | 2022 |
+| [`portarias/`](portarias/) | Portaria CVM | 65 | 65 | 53 | 12 | 2001 | 2026 |
+| [`pareceres-de-orientacao/`](pareceres-de-orientacao/) | Parecer de Orientação CVM | 41 | 41 | 41 | 0 | 1978 | 2023 |
+| [`decisoes-conjuntas/`](decisoes-conjuntas/) | Decisão Conjunta | 34 | 34 | 18 | 16 | 1990 | 2024 |
+| [`portarias-conjuntas/`](portarias-conjuntas/) | Portaria Conjunta | 2 | 2 | 2 | 0 | 2018 | 2018 |
+| **Total** |  | **2.606** | **2.606** | **1.444** | **1.162** |  |  |
+
+### Por década
+
+| Década | Normas | Vigentes | Distribuição |
+| --- | ---: | ---: | --- |
+| 1970s | 36 | 7 | █ |
+| 1980s | 224 | 26 | ███████ |
+| 1990s | 503 | 177 | ███████████████ |
+| 2000s | 578 | 269 | ██████████████████ |
+| 2010s | 614 | 372 | ███████████████████ |
+| 2020s | 651 | 593 | ████████████████████ |
+
+### Temas mais frequentes
+
+| Temas | Normas |
+| --- | ---: |
+| Ofício Circular | 113 |
+| Normas Contabeis | 109 |
+| Companhia | 77 |
+| Ofertas Publicas | 46 |
+| Fundos de Investimento | 39 |
+| Intermediários | 24 |
+| Companhias Abertas | 22 |
+| Mercados Organizados | 21 |
+| Administradores de Carteiras | 16 |
+| Fundos de Investimento em Direitos Creditórios | 14 |
+| Infraestrutura do Mercado | 12 |
+| Sandbox Regulatório | 11 |
+| Fundos de Investimento Imobiliários | 11 |
+| Ritos Processuais | 9 |
+| Taxas/Débitos/Restituições | 9 |
+
+<!-- acervo:fim -->
+
+O que ficou de fora e por quê está em [COBERTURA.md](COBERTURA.md) e, linha por linha, em
+[`_falhas.jsonl`](_falhas.jsonl).
+
+## Fonte
+
+Tudo vem do [portal de legislação da CVM](https://conteudo.cvm.gov.br/legislacao/index.html): o índice sai
+da busca oficial de cada categoria e o texto, do arquivo publicado na página de cada norma (HTML, DOCX ou
+PDF). Nada é digitado à mão.
+
+---
 
 ## Estrutura
 
@@ -31,6 +101,8 @@ portarias/AAAA/*.md                         Portarias CVM
 portarias-conjuntas/AAAA/*.md               Portarias conjuntas (CADE, Ministério da Fazenda)
 scripts/cvm.py                              o código que baixa, converte e mede
 COBERTURA.md                                números por categoria e lacunas
+progresso.svg                               a barra de progresso do topo
+scripts/readme.py                           gera os números deste README
 _falhas.jsonl                               o que não entrou, linha por linha, e por quê
 ```
 
