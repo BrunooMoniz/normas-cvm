@@ -24,35 +24,28 @@ os atos da CVM.
 ## Acervo
 
 <!-- acervo:inicio -->
-[![progresso](progresso.svg)](COBERTURA.md)
+[![Progresso do acervo](progresso.svg)](COBERTURA.md)
 
-**2.606 de 2.606 normas do índice oficial (100,0%)**, números de 10/11/2026. Vigentes são as que o portal não marca como revogadas nem canceladas.
+### Por série
 
-### Por pasta
+| Série | No índice oficial | Publicadas | Vigentes | Revogadas | Período |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| [Deliberações CVM](deliberacoes/) | 908 | 908 | 482 | 426 | 1978 a 2026 |
+| [Instruções CVM](instrucoes/) | 627 | 627 | 8 | 619 | 1978 a 2020 |
+| [Ofícios-Circulares](oficios-circulares/) | 601 | 601 | 601 | 0 | 1996 a 2026 |
+| [Resoluções CVM](resolucoes/) | 251 | 251 | 233 | 18 | 2020 a 2026 |
+| [Notas Explicativas](notas-explicativas/) | 77 | 77 | 6 | 71 | 1977 a 2022 |
+| [Portarias CVM](portarias/) | 65 | 65 | 53 | 12 | 2001 a 2026 |
+| [Pareceres de Orientação](pareceres-de-orientacao/) | 41 | 41 | 41 | 0 | 1978 a 2023 |
+| [Decisões Conjuntas](decisoes-conjuntas/) | 34 | 34 | 18 | 16 | 1990 a 2024 |
+| [Portarias Conjuntas](portarias-conjuntas/) | 2 | 2 | 2 | 0 | 2018 a 2018 |
+| **Total** | **2.606** | **2.606** | **1.444** | **1.162** |  |
 
-| Pasta | Tipo | No índice oficial | Publicadas | Vigentes | Revogadas | De | Até |
-| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| [`deliberacoes/`](deliberacoes/) | Deliberação CVM | 908 | 908 | 482 | 426 | 1978 | 2026 |
-| [`instrucoes/`](instrucoes/) | Instrução CVM | 627 | 627 | 8 | 619 | 1978 | 2020 |
-| [`oficios-circulares/`](oficios-circulares/) | Ofício-Circular CVM | 601 | 601 | 601 | 0 | 1996 | 2026 |
-| [`resolucoes/`](resolucoes/) | Resolução CVM | 251 | 251 | 233 | 18 | 2020 | 2026 |
-| [`notas-explicativas/`](notas-explicativas/) | Nota Explicativa CVM | 77 | 77 | 6 | 71 | 1977 | 2022 |
-| [`portarias/`](portarias/) | Portaria CVM | 65 | 65 | 53 | 12 | 2001 | 2026 |
-| [`pareceres-de-orientacao/`](pareceres-de-orientacao/) | Parecer de Orientação CVM | 41 | 41 | 41 | 0 | 1978 | 2023 |
-| [`decisoes-conjuntas/`](decisoes-conjuntas/) | Decisão Conjunta | 34 | 34 | 18 | 16 | 1990 | 2024 |
-| [`portarias-conjuntas/`](portarias-conjuntas/) | Portaria Conjunta | 2 | 2 | 2 | 0 | 2018 | 2018 |
-| **Total** |  | **2.606** | **2.606** | **1.444** | **1.162** |  |  |
+Vigentes são as que o portal não marca como revogadas nem canceladas.
 
 ### Por década
 
-| Década | Normas | Vigentes | Distribuição |
-| --- | ---: | ---: | --- |
-| 1970s | 36 | 7 | █ |
-| 1980s | 224 | 26 | ███████ |
-| 1990s | 503 | 177 | ███████████████ |
-| 2000s | 578 | 269 | ██████████████████ |
-| 2010s | 614 | 372 | ███████████████████ |
-| 2020s | 651 | 593 | ████████████████████ |
+![Normas por década](decadas.svg)
 
 ### Temas mais frequentes
 
@@ -74,6 +67,7 @@ os atos da CVM.
 | Ritos Processuais | 9 |
 | Taxas/Débitos/Restituições | 9 |
 
+_Números de 10/11/2026, gerados por `scripts/readme.py`._
 <!-- acervo:fim -->
 
 O que ficou de fora e por quê está em [COBERTURA.md](COBERTURA.md) e, linha por linha, em
@@ -101,7 +95,7 @@ portarias/AAAA/*.md                         Portarias CVM
 portarias-conjuntas/AAAA/*.md               Portarias conjuntas (CADE, Ministério da Fazenda)
 scripts/cvm.py                              o código que baixa, converte e mede
 COBERTURA.md                                números por categoria e lacunas
-progresso.svg                               a barra de progresso do topo
+progresso.svg  decadas.svg                 o painel de progresso e o gráfico por década
 scripts/readme.py                           gera os números deste README
 _falhas.jsonl                               o que não entrou, linha por linha, e por quê
 ```

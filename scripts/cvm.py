@@ -424,7 +424,7 @@ def relatorio():
     linhas.append("| **Total** | " + " | ".join(f"**{v:,}**".replace(",", ".") for v in tot) + " |")
     (RAIZ / "COBERTURA.md").write_text("\n".join(linhas) + "\n", encoding="utf-8")
     import readme  # números do README e progresso.svg saem da mesma medição
-    readme.main("Temas mais frequentes", "temas")
+    readme.main(readme.CONFIG)
     return tot
 
 
