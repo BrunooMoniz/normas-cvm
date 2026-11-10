@@ -24,7 +24,7 @@ resolucoes/AAAA/resolNNN.md                 Resoluções CVM (2020 em diante)
 instrucoes/AAAA/instNNN.md                  Instruções CVM (1978 a 2020; substituídas pelas resoluções)
 deliberacoes/AAAA/deliNNN.md                Deliberações CVM
 pareceres-de-orientacao/AAAA/pareNNN.md     Pareceres de Orientação
-oficios-circulares/AAAA/oc-<area>-NNAA.md   Ofícios-Circulares das superintendências (SIN, SEP, SNC...)
+oficios-circulares/AAAA/oc-<area>-NNAA.md   Ofícios-Circulares das superintendências (SIN, SEP, SNC...); nome repetido em subpastas ganha a subpasta no fim (-sse1)
 notas-explicativas/AAAA/*.md                Notas explicativas das instruções e resoluções
 decisoes-conjuntas/AAAA/*.md                Decisões e resoluções conjuntas BCB/CVM
 portarias/AAAA/*.md                         Portarias CVM
