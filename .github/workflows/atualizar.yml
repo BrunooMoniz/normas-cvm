@@ -22,7 +22,7 @@ jobs:
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v10
+      - uses: astral-sh/setup-uv@v10.3.2  # sem tag de versão maior; versão exata
       - name: Dependências de PDF e OCR
         run: sudo apt-get install -y -qq --no-install-recommends poppler-utils tesseract-ocr tesseract-ocr-por > /dev/null
       - name: Normas novas
