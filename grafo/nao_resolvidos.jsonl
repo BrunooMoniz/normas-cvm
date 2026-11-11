@@ -1,0 +1,42 @@
+{"id":"cvm:comunicado-conjunto-bcb:17-1987","arestas":1,"em":"cvm:instrucao:68","campo":"notas"}
+{"id":"cvm:comunicado-conjunto-spc:4-1994","arestas":1,"em":"cvm:instrucao:205","campo":"notas"}
+{"id":"cvm:comunicado-conjunto-srf-po:12-1987","arestas":1,"em":"cvm:instrucao:57","campo":"notas"}
+{"id":"cvm:portaria:103-2023","arestas":1,"em":"cvm:portaria:212-2021","campo":"notas"}
+{"id":"cvm:portaria:11-2023","arestas":1,"em":"cvm:portaria:111-2022","campo":"notas"}
+{"id":"cvm:portaria:113-2022","arestas":2,"em":"cvm:portaria:101-2022","campo":"notas"}
+{"id":"cvm:portaria:127-2021","arestas":1,"em":"cvm:portaria:10-2021","campo":"notas"}
+{"id":"cvm:portaria:134-2025","arestas":1,"em":"cvm:portaria:12-2025","campo":"notas"}
+{"id":"cvm:portaria:145-2022","arestas":1,"em":"cvm:portaria:111-2022","campo":"notas"}
+{"id":"cvm:portaria:153-2022","arestas":1,"em":"cvm:portaria:163-2021","campo":"revogada_por"}
+{"id":"cvm:portaria:159-2022","arestas":1,"em":"cvm:portaria:102-2022","campo":"revogada_por"}
+{"id":"cvm:portaria:167-2025","arestas":1,"em":"cvm:portaria:123-2024","campo":"notas"}
+{"id":"cvm:portaria:200-2026","arestas":1,"em":"cvm:portaria:12-2025","campo":"notas"}
+{"id":"cvm:portaria:23-2025","arestas":1,"em":"cvm:portaria:12-2025","campo":"notas"}
+{"id":"cvm:portaria:261-2001","arestas":1,"em":"cvm:portaria:150-2001","campo":"notas"}
+{"id":"cvm:portaria:27-2026","arestas":1,"em":"cvm:portaria:114-2025","campo":"notas"}
+{"id":"cvm:portaria:28-2026","arestas":1,"em":"cvm:portaria:159-2021","campo":"notas"}
+{"id":"cvm:portaria:30-2022","arestas":1,"em":"cvm:portaria:111-2022","campo":"notas"}
+{"id":"cvm:portaria:33-2016","arestas":1,"em":"cvm:portaria:31-2025","campo":"notas"}
+{"id":"cvm:portaria:34-2016","arestas":1,"em":"cvm:portaria:17-2025","campo":"notas"}
+{"id":"cvm:portaria:47-2023","arestas":1,"em":"cvm:portaria:212-2021","campo":"notas"}
+{"id":"cvm:portaria:47-2025","arestas":1,"em":"cvm:portaria:111-2024","campo":"notas"}
+{"id":"cvm:portaria:58-2026","arestas":1,"em":"cvm:portaria:12-2025","campo":"notas"}
+{"id":"cvm:portaria:76-2023","arestas":1,"em":"cvm:portaria:147-2022","campo":"notas"}
+{"id":"cvm:portaria:95-2025","arestas":2,"em":"cvm:portaria:111-2022","campo":"revogada_por"}
+{"id":"dec:57663-1966","arestas":6,"em":"cvm:instrucao:88","campo":"notas"}
+{"id":"ext:comunicado-tecnico-ct-ibracon:3-1989","arestas":1,"em":"cvm:instrucao:118","campo":"notas"}
+{"id":"ext:comunicado-tecnico-ibracon:2-1990","arestas":1,"em":"cvm:instrucao:127","campo":"notas"}
+{"id":"ext:resolucao-cfc:607-1985","arestas":1,"em":"cvm:deliberacao:25","campo":"notas"}
+{"id":"ext:resolucao-cfc:678-1990","arestas":1,"em":"cvm:instrucao:127","campo":"notas"}
+{"id":"lei:4595-1974","arestas":1,"em":"cvm:instrucao:91","campo":"notas"}
+{"id":"lei:7713-1990","arestas":1,"em":"cvm:instrucao:118","campo":"notas"}
+{"campo":"titulo","padrao":"conjunta com o BCB sem par no acervo do BCB","trechos":3,"em":"cvm:decisao-conjunta-bcb:8-2011","exemplo":"Decisão Conjunta BACEN/CVM 08/11"}
+{"campo":"notas","padrao":"ALTERADA a redação do Anexo pela N .","trechos":1,"em":"cvm:instrucao:110","exemplo":"ALTERADA a redação do Anexo pela 128/90 ."}
+{"campo":"notas","padrao":"REVOGADA pela Portaria PTE N N .","trechos":1,"em":"cvm:portaria:182-2023","exemplo":"REVOGADA pela Portaria PTE 51/202 4 ."}
+{"campo":"notas","padrao":"VIDE Ato Declaratório N (stop order - exclusão do nome de Christian Robert Rocha","trechos":1,"em":"cvm:deliberacao:362","exemplo":"VIDE Ato Declaratório 8.467/05 (stop order - exclusão do nome de Christian Robert Rocha)"}
+{"campo":"notas","padrao":"VIDE Ato Declaratório N (stop order - exclusão do nome de José Ricardo Cordeiro)","trechos":1,"em":"cvm:deliberacao:438","exemplo":"VIDE Ato Declaratório 7902/04 (stop order - exclusão do nome de José Ricardo Cordeiro)"}
+{"campo":"notas","padrao":"VIDE Ato Declaratório N (stop order - exclusão do nome de Ricardo Moreira Negrão","trechos":1,"em":"cvm:deliberacao:379","exemplo":"VIDE Ato Declaratório 7.990/04 (stop order - exclusão do nome de Ricardo Moreira Negrão)"}
+{"campo":"notas","padrao":"VIDE Circular nº N, do Banco Central do Brasil.","trechos":1,"em":"cvm:instrucao:95","exemplo":"VIDE Circular nº 1.339, do Banco Central do Brasil."}
+{"campo":"notas","padrao":"VIDE Comunicado Conjunto CVM/SRF.","trechos":1,"em":"cvm:instrucao:59","exemplo":"VIDE Comunicado Conjunto CVM/SRF."}
+{"campo":"notas","padrao":"VIDE Instrução Normativa da Secretaria da Receita Federal nº N, de N","trechos":1,"em":"cvm:instrucao:50","exemplo":"VIDE Instrução Normativa da Secretaria da Receita Federal nº 74, de 28.05.86."}
+{"campo":"revogada_por","padrao":"Portaria PTE N N","trechos":1,"em":"cvm:portaria:182-2023","exemplo":"Portaria PTE 51/202 4"}
