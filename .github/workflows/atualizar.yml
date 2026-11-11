@@ -34,6 +34,7 @@ jobs:
           git add -A
           git diff --cached --quiet && { echo "nada novo"; exit 0; }
           novas=$(git diff --cached --name-status | grep -c '^A.*\.md$' || true)
-          git commit -q -m "dados: ${novas} normas novas em $(date -u +%d/%m/%Y)"
+          if [ "$novas" -gt 0 ]; then msg="dados: ${novas} normas novas em $(date -u +%d/%m/%Y)"; else msg="dados: números de $(date -u +%d/%m/%Y)"; fi
+          git commit -q -m "$msg"
           git pull -q --rebase origin main
           git push -q origin main
