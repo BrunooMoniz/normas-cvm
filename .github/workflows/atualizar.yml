@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: "23 * * * *"
   workflow_dispatch:
+  push:  # roda também quando o próprio job muda, para validar a mudança na hora
+    branches: [main]
+    paths: [".github/workflows/atualizar.yml", "scripts/**"]
 
 permissions:
   contents: write
