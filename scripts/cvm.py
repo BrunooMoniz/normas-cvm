@@ -8,7 +8,7 @@ Uso:
   uv run scripts/cvm.py                  # índice + normas de todas as categorias
   uv run scripts/cvm.py resolucoes       # só uma categoria
   uv run scripts/cvm.py --limite 20      # amostra (smoke)
-  uv run scripts/cvm.py --relatorio      # só regrava COBERTURA.md
+  uv run scripts/cvm.py --relatorio      # só regrava COBERTURA.md e o grafo de relações (grafo/)
 
 Idempotente: o que já está em _fonte/ não é baixado de novo.
 """
@@ -422,6 +422,8 @@ def relatorio():
         tot = [a + b for a, b in zip(tot, vals)]
         linhas.append(f"| {tipo} (`{destino}/`) | " + " | ".join(f"{v:,}".replace(",", ".") for v in vals) + " |")
     linhas.append("| **Total** | " + " | ".join(f"**{v:,}**".replace(",", ".") for v in tot) + " |")
+    import grafo  # relações entre normas: grava grafo/*.jsonl e devolve a tabela de arestas
+    linhas += grafo.gerar(RAIZ, "cvm")
     (RAIZ / "COBERTURA.md").write_text("\n".join(linhas) + "\n", encoding="utf-8")
     import readme  # números do README e progresso.svg saem da mesma medição
     readme.main(readme.CONFIG)
@@ -473,7 +475,7 @@ def main():
     ap.add_argument("pastas", nargs="*", help=f"categorias (padrão: todas): {', '.join(CATEGORIAS)}")
     ap.add_argument("--limite", type=int, help="processa só as N primeiras de cada categoria")
     ap.add_argument("--forcar", action="store_true", help="baixa de novo mesmo o que está em cache")
-    ap.add_argument("--relatorio", action="store_true", help="só regrava COBERTURA.md")
+    ap.add_argument("--relatorio", action="store_true", help="só regrava COBERTURA.md e o grafo de relações")
     ap.add_argument("--novos", action="store_true",
                     help="modo leve: só normas sem .md, mais as que elas citam (para o job agendado)")
     a = ap.parse_args()
