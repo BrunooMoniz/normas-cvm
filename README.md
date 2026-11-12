@@ -67,7 +67,7 @@ Vigentes são as que o portal não marca como revogadas nem canceladas.
 | Ritos Processuais | 9 |
 | Taxas/Débitos/Restituições | 9 |
 
-_Números de 11/11/2026, gerados por `scripts/readme.py`._
+_Números de 12/11/2026, gerados por `scripts/readme.py`._
 <!-- acervo:fim -->
 
 O que ficou de fora e por quê está em [COBERTURA.md](COBERTURA.md) e, linha por linha, em
