@@ -13,7 +13,7 @@ temas: ["Fundos de Investimento"]
 fonte: "https://conteudo.cvm.gov.br/legislacao/resolucoes/resol175.html"
 arquivo: "https://conteudo.cvm.gov.br/legislacao/resolucoes/anexos/100/resol175consolid.docx"
 sha256_arquivo: c1bc7c2bf6fa1a245c3340aaf42fb87422f76f27f08a13387e8971c712986824
-baixado_em: 2026-11-10
+baixado_em: 2026-11-17
 ---
 # Resolução CVM 175
 
