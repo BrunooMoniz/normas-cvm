@@ -65,7 +65,7 @@ Vigentes são as que o portal não marca como revogadas nem canceladas.
 | Sandbox Regulatório | 11 |
 | Fundos de Investimento Imobiliários | 11 |
 | Auditor Independente | 10 |
-| Ritos Processuais | 9 |
+| Taxas/Débitos/Restituições | 9 |
 
 _Números de 20/11/2026, gerados por `scripts/readme.py`._
 <!-- acervo:fim -->
