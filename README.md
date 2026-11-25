@@ -32,14 +32,14 @@ os atos da CVM.
 | --- | ---: | ---: | ---: | ---: | ---: |
 | [Deliberações CVM](deliberacoes/) | 908 | 908 | 482 | 426 | 1978 a 2026 |
 | [Instruções CVM](instrucoes/) | 627 | 627 | 8 | 619 | 1978 a 2020 |
-| [Ofícios-Circulares](oficios-circulares/) | 604 | 604 | 604 | 0 | 1996 a 2026 |
+| [Ofícios-Circulares](oficios-circulares/) | 605 | 605 | 605 | 0 | 1996 a 2026 |
 | [Resoluções CVM](resolucoes/) | 251 | 251 | 233 | 18 | 2020 a 2026 |
 | [Notas Explicativas](notas-explicativas/) | 77 | 77 | 6 | 71 | 1977 a 2022 |
 | [Portarias CVM](portarias/) | 65 | 65 | 53 | 12 | 2001 a 2026 |
 | [Pareceres de Orientação](pareceres-de-orientacao/) | 41 | 41 | 41 | 0 | 1978 a 2023 |
 | [Decisões Conjuntas](decisoes-conjuntas/) | 34 | 34 | 18 | 16 | 1990 a 2024 |
 | [Portarias Conjuntas](portarias-conjuntas/) | 2 | 2 | 2 | 0 | 2018 a 2018 |
-| **Total** | **2.609** | **2.609** | **1.447** | **1.162** |  |
+| **Total** | **2.610** | **2.610** | **1.448** | **1.162** |  |
 
 Vigentes são as que o portal não marca como revogadas nem canceladas.
 
@@ -51,9 +51,9 @@ Vigentes são as que o portal não marca como revogadas nem canceladas.
 
 | Temas | Normas |
 | --- | ---: |
-| Ofício Circular | 115 |
+| Ofício Circular | 116 |
 | Normas Contabeis | 109 |
-| Companhia | 78 |
+| Companhia | 79 |
 | Ofertas Publicas | 46 |
 | Fundos de Investimento | 40 |
 | Intermediários | 24 |
